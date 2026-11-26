@@ -1,0 +1,1 @@
+{"extends":"../../tsconfig.json","compilerOptions":{"outDir":"../../out-tsc/checkout","types":[]},"files":["src/main.ts"],"include":["src/**/*.ts","src/**/*.d.ts","../../libs/contracts/src/**/*.ts","../../apps/shared/**/*.ts"]}

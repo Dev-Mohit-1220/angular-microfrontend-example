@@ -1,0 +1,1 @@
+{"products":"http://localhost:4201/remoteEntry.json","cart":"http://localhost:4202/remoteEntry.json","checkout":"http://localhost:4203/remoteEntry.json","profile":"http://localhost:4204/remoteEntry.json"}
