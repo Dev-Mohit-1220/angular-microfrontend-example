@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+:root{font-family:'DM Sans',sans-serif;color:#182230;background:#f5f7fb}*{box-sizing:border-box}body{margin:0;min-width:320px}button,a{font:inherit}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px clamp(20px,5vw,72px);background:#fff;border-bottom:1px solid #e7ebf1}
+.brand{font:800 1.25rem 'Manrope',sans-serif;text-decoration:none;color:#2458d3}nav{display:flex;align-items:center;flex-wrap:wrap;gap:22px}nav a{color:#526071;text-decoration:none;font-weight:600}nav a.active,nav a:hover{color:#2458d3}
+.count{display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:999px;background:#eaf0ff;color:#2458d3}.page-shell{width:min(1120px,calc(100% - 40px));min-height:calc(100vh - 140px);margin:auto;padding:48px 0 64px}.footer{padding:22px;text-align:center;color:#7a8798;background:#fff;border-top:1px solid #e7ebf1}
+@media(max-width:640px){.topbar{align-items:flex-start;flex-direction:column}nav{gap:14px}}

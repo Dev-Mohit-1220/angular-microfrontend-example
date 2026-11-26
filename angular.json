@@ -1,0 +1,502 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "apps",
+  "projects": {
+    "shell": {
+      "projectType": "application",
+      "root": "apps/shell",
+      "sourceRoot": "apps/shell/src",
+      "prefix": "shop",
+      "architect": {
+        "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {},
+          "configurations": {
+            "production": {
+              "target": "shell:application:production"
+            },
+            "development": {
+              "target": "shell:application:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "shell:serve-original:development",
+            "rebuildDelay": 0,
+            "dev": true,
+            "port": 4200
+          },
+          "configurations": {
+            "production": {
+              "target": "shell:serve-original:production",
+              "dev": false
+            },
+            "development": {
+              "target": "shell:serve-original:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "application": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/shell",
+            "index": "apps/shared/index.html",
+            "browser": "apps/shell/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "apps/shell/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "apps/shell/public"
+              }
+            ],
+            "styles": [
+              "apps/shared/styles.scss"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "700kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "8kb",
+                  "maximumError": "12kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-original": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "shell:application:production"
+            },
+            "development": {
+              "buildTarget": "shell:application:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    },
+    "products": {
+      "projectType": "application",
+      "root": "apps/products",
+      "sourceRoot": "apps/products/src",
+      "prefix": "shop",
+      "architect": {
+        "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {},
+          "configurations": {
+            "production": {
+              "target": "products:application:production"
+            },
+            "development": {
+              "target": "products:application:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "products:serve-original:development",
+            "rebuildDelay": 0,
+            "dev": true,
+            "port": 4201
+          },
+          "configurations": {
+            "production": {
+              "target": "products:serve-original:production",
+              "dev": false
+            },
+            "development": {
+              "target": "products:serve-original:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "application": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/products",
+            "index": "apps/shared/index.html",
+            "browser": "apps/products/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "apps/products/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "apps/products/public"
+              }
+            ],
+            "styles": [
+              "apps/shared/styles.scss"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "700kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "8kb",
+                  "maximumError": "12kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-original": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "products:application:production"
+            },
+            "development": {
+              "buildTarget": "products:application:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    },
+    "cart": {
+      "projectType": "application",
+      "root": "apps/cart",
+      "sourceRoot": "apps/cart/src",
+      "prefix": "shop",
+      "architect": {
+        "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {},
+          "configurations": {
+            "production": {
+              "target": "cart:application:production"
+            },
+            "development": {
+              "target": "cart:application:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "cart:serve-original:development",
+            "rebuildDelay": 0,
+            "dev": true,
+            "port": 4202
+          },
+          "configurations": {
+            "production": {
+              "target": "cart:serve-original:production",
+              "dev": false
+            },
+            "development": {
+              "target": "cart:serve-original:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "application": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/cart",
+            "index": "apps/shared/index.html",
+            "browser": "apps/cart/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "apps/cart/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "apps/cart/public"
+              }
+            ],
+            "styles": [
+              "apps/shared/styles.scss"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "700kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "8kb",
+                  "maximumError": "12kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-original": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "cart:application:production"
+            },
+            "development": {
+              "buildTarget": "cart:application:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    },
+    "checkout": {
+      "projectType": "application",
+      "root": "apps/checkout",
+      "sourceRoot": "apps/checkout/src",
+      "prefix": "shop",
+      "architect": {
+        "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {},
+          "configurations": {
+            "production": {
+              "target": "checkout:application:production"
+            },
+            "development": {
+              "target": "checkout:application:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "checkout:serve-original:development",
+            "rebuildDelay": 0,
+            "dev": true,
+            "port": 4203
+          },
+          "configurations": {
+            "production": {
+              "target": "checkout:serve-original:production",
+              "dev": false
+            },
+            "development": {
+              "target": "checkout:serve-original:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "application": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/checkout",
+            "index": "apps/shared/index.html",
+            "browser": "apps/checkout/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "apps/checkout/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "apps/checkout/public"
+              }
+            ],
+            "styles": [
+              "apps/shared/styles.scss"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "700kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "8kb",
+                  "maximumError": "12kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-original": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "checkout:application:production"
+            },
+            "development": {
+              "buildTarget": "checkout:application:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    },
+    "profile": {
+      "projectType": "application",
+      "root": "apps/profile",
+      "sourceRoot": "apps/profile/src",
+      "prefix": "shop",
+      "architect": {
+        "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {},
+          "configurations": {
+            "production": {
+              "target": "profile:application:production"
+            },
+            "development": {
+              "target": "profile:application:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "profile:serve-original:development",
+            "rebuildDelay": 0,
+            "dev": true,
+            "port": 4204
+          },
+          "configurations": {
+            "production": {
+              "target": "profile:serve-original:production",
+              "dev": false
+            },
+            "development": {
+              "target": "profile:serve-original:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "application": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/profile",
+            "index": "apps/shared/index.html",
+            "browser": "apps/profile/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "apps/profile/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "apps/profile/public"
+              }
+            ],
+            "styles": [
+              "apps/shared/styles.scss"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "700kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "8kb",
+                  "maximumError": "12kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-original": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "profile:application:production"
+            },
+            "development": {
+              "buildTarget": "profile:application:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    }
+  }
+}
