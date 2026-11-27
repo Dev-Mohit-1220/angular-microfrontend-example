@@ -24,9 +24,15 @@ Run the remotes in separate terminals: `npm run start:products`, `npm run start:
 ## Validate
 
 ```bash
+npm run format:check
+npm run lint
 npm run typecheck
 npm run build:all
 ```
+
+Run `npm run format` to apply the repository Prettier rules. ESLint and Prettier checks run in GitHub Actions before type-checking and builds. TypeScript strict mode also rejects unused locals and parameters.
+
+The Products remote intentionally uses a two-item catalogue: enough to demonstrate remote rendering and shared cart events without creating a large mock-data layer.
 
 Product data is mock data. Cart state resets on reload. Checkout does not collect payment details or process transactions. Profile contains no account data. Real authentication, persistence, payments, and production observability remain outside this initial implementation.
 
