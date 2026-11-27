@@ -19,7 +19,11 @@
     "build:checkout": "ng build checkout",
     "build:profile": "ng build profile",
     "build:all": "npm run build:shell && npm run build:products && npm run build:cart && npm run build:checkout && npm run build:profile",
-    "typecheck": "tsc --noEmit -p tsconfig.json"
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings=0",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@angular/animations": "22.2.5",
@@ -41,6 +45,10 @@
     "@angular/cli": "22.2.5",
     "@angular/compiler-cli": "22.2.5",
     "@types/node": "^22.15.30",
-    "typescript": "~6.0.3"
+    "typescript": "~6.0.3",
+    "eslint": "^9.39.1",
+    "typescript-eslint": "^8.48.1",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.6.2"
   }
 }
