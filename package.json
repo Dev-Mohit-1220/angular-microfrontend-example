@@ -20,10 +20,10 @@
     "build:profile": "ng build profile",
     "build:all": "npm run build:shell && npm run build:products && npm run build:cart && npm run build:checkout && npm run build:profile",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "lint": "eslint . --max-warnings=0",
-    "lint:fix": "eslint . --fix"
+    "format": "prettier --write \"**/*.ts\"",
+    "format:check": "prettier --check \"**/*.ts\"",
+    "lint": "eslint \"**/*.ts\" --max-warnings=0",
+    "lint:fix": "eslint \"**/*.ts\" --fix"
   },
   "dependencies": {
     "@angular/animations": "22.2.5",
