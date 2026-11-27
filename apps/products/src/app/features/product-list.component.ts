@@ -76,8 +76,8 @@ const PRODUCTS: readonly Product[] = [
   ],
 })
 export class ProductListComponent {
-  readonly products = PRODUCTS;
-  feedback = '';
+  readonly products: readonly Product[] = PRODUCTS;
+  feedback: string = '';
 
   addToCart(product: Product): void {
     addCartItem(product);
