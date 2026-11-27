@@ -1,2 +1,10 @@
 import { initFederation } from '@angular-architects/native-federation';
-initFederation().then(()=>import('./bootstrap')).catch((error:unknown)=>console.error('Cart remote initialization failed.',error));
+
+const startApplication = async (): Promise<void> => {
+  await initFederation();
+  await import('./bootstrap');
+};
+
+void startApplication().catch((error: unknown) => {
+  console.error('Cart remote initialization failed.', error);
+});
