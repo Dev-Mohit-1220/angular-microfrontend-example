@@ -1,4 +1,5 @@
-import { ApplicationConfig, InjectionToken } from '@angular/core';
+import { InjectionToken } from '@angular/core';
+import type { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import type { NativeFederationResult } from '@angular-architects/native-federation';
 import { routes } from './app.routes';
