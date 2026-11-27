@@ -1,4 +1,4 @@
-export type ProductCategory = 'Accessories' | 'Electronics' | 'Home';
+export type ProductCategory = 'Accessories' | 'Electronics';
 
 export interface Product {
   readonly id: string;
