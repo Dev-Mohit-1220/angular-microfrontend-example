@@ -4,12 +4,8 @@ import type { NativeFederationResult } from '@angular-architects/native-federati
 import { AppComponent } from './app/app.component';
 import { appConfig } from './app/app.config';
 
-export const bootstrap = (
-  federation: NativeFederationResult,
-): Promise<ApplicationRef> =>
-  bootstrapApplication(AppComponent, appConfig(federation)).catch(
-    (error: unknown) => {
-      console.error('ShopSphere shell bootstrap failed.', error);
-      throw error;
-    },
-  );
+export const bootstrap = (federation: NativeFederationResult): Promise<ApplicationRef> =>
+  bootstrapApplication(AppComponent, appConfig(federation)).catch((error: unknown) => {
+    console.error('ShopSphere shell bootstrap failed.', error);
+    throw error;
+  });

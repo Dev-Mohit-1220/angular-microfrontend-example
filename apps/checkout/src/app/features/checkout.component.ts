@@ -56,15 +56,58 @@ import {
     </div>
   `,
   styles: [
-    `:host { display: block; max-width: 680px; margin: 0 auto; }
-    .eyebrow { color: #2458d3; font-size: .75rem; font-weight: 700; letter-spacing: .14em; }
-    h1 { margin: 8px 0; font: 800 clamp(2rem, 5vw, 3rem) 'Manrope', sans-serif; letter-spacing: -.05em; }
-    .intro > p:last-child { color: #697789; line-height: 1.6; }
-    .panel { margin-top: 28px; padding: 28px; border: 1px solid #e5eaf1; border-radius: 18px; background: white; }
-    .line { display: flex; justify-content: space-between; margin: 16px 0; color: #697789; }
-    .total { padding-top: 18px; border-top: 1px solid #e5eaf1; color: #182230; }
-    .panel > a { display: block; text-align: center; color: #2458d3; text-decoration: none; }
-    .success { color: #147a49; font-weight: 600; }`,
+    `
+      :host {
+        display: block;
+        max-width: 680px;
+        margin: 0 auto;
+      }
+      .eyebrow {
+        color: #2458d3;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+      }
+      h1 {
+        margin: 8px 0;
+        font:
+          800 clamp(2rem, 5vw, 3rem) 'Manrope',
+          sans-serif;
+        letter-spacing: -0.05em;
+      }
+      .intro > p:last-child {
+        color: #697789;
+        line-height: 1.6;
+      }
+      .panel {
+        margin-top: 28px;
+        padding: 28px;
+        border: 1px solid #e5eaf1;
+        border-radius: 18px;
+        background: white;
+      }
+      .line {
+        display: flex;
+        justify-content: space-between;
+        margin: 16px 0;
+        color: #697789;
+      }
+      .total {
+        padding-top: 18px;
+        border-top: 1px solid #e5eaf1;
+        color: #182230;
+      }
+      .panel > a {
+        display: block;
+        text-align: center;
+        color: #2458d3;
+        text-decoration: none;
+      }
+      .success {
+        color: #147a49;
+        font-weight: 600;
+      }
+    `,
   ],
 })
 export class CheckoutComponent implements OnInit, OnDestroy {
@@ -73,19 +116,14 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     this.items().reduce((total, item) => total + item.quantity, 0),
   );
   readonly subtotal = computed(() =>
-    this.items().reduce(
-      (total, item) => total + item.product.price * item.quantity,
-      0,
-    ),
+    this.items().reduce((total, item) => total + item.product.price * item.quantity, 0),
   );
   readonly completed = signal(false);
   readonly reference = signal('');
   private cleanup: (() => void) | undefined;
 
   ngOnInit(): void {
-    this.cleanup = listenToShopEvent('cart:items-changed', (items) =>
-      this.items.set(items),
-    );
+    this.cleanup = listenToShopEvent('cart:items-changed', (items) => this.items.set(items));
   }
 
   ngOnDestroy(): void {

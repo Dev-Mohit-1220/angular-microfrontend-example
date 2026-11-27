@@ -22,9 +22,7 @@ export function publishShopEvent<TName extends ShopEventName>(
     return;
   }
 
-  window.dispatchEvent(
-    new CustomEvent<ShopEventMap[TName]>(`shopsphere:${name}`, { detail }),
-  );
+  window.dispatchEvent(new CustomEvent<ShopEventMap[TName]>(`shopsphere:${name}`, { detail }));
 }
 
 export function listenToShopEvent<TName extends ShopEventName>(
@@ -53,9 +51,7 @@ export function addCartItem(product: Product): void {
   const existing = current.find((item) => item.product.id === product.id);
   const updated = existing
     ? current.map((item) =>
-        item.product.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item,
+        item.product.id === product.id ? { ...item, quantity: item.quantity + 1 } : item,
       )
     : [...current, { product, quantity: 1 }];
 

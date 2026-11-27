@@ -59,19 +59,74 @@ const PRODUCTS: readonly Product[] = [
   `,
   styles: [
     `
-      :host { display: block; }
-      .intro { max-width: 650px; margin-bottom: 32px; }
-      .eyebrow, .category { color: #2458d3; font-size: .75rem; font-weight: 700; letter-spacing: .14em; }
-      h1 { margin: 8px 0 12px; font: 800 clamp(2rem, 5vw, 3.2rem) 'Manrope', sans-serif; letter-spacing: -.05em; }
-      .intro > p:last-child, .card p { color: #697789; line-height: 1.6; }
-      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
-      .card { overflow: hidden; border: 1px solid #e5eaf1; border-radius: 18px; background: white; }
-      img { display: block; width: 100%; height: 190px; object-fit: cover; }
-      .content { padding: 18px; }
-      h2 { margin: 8px 0; font: 700 1.08rem 'Manrope', sans-serif; }
-      .card p { min-height: 48px; margin: 0 0 18px; font-size: .9rem; }
-      .footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-      .notice { min-height: 24px; color: #2458d3; font-size: .9rem; }
+      :host {
+        display: block;
+      }
+      .intro {
+        max-width: 650px;
+        margin-bottom: 32px;
+      }
+      .eyebrow,
+      .category {
+        color: #2458d3;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+      }
+      h1 {
+        margin: 8px 0 12px;
+        font:
+          800 clamp(2rem, 5vw, 3.2rem) 'Manrope',
+          sans-serif;
+        letter-spacing: -0.05em;
+      }
+      .intro > p:last-child,
+      .card p {
+        color: #697789;
+        line-height: 1.6;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 22px;
+      }
+      .card {
+        overflow: hidden;
+        border: 1px solid #e5eaf1;
+        border-radius: 18px;
+        background: white;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+      }
+      .content {
+        padding: 18px;
+      }
+      h2 {
+        margin: 8px 0;
+        font:
+          700 1.08rem 'Manrope',
+          sans-serif;
+      }
+      .card p {
+        min-height: 48px;
+        margin: 0 0 18px;
+        font-size: 0.9rem;
+      }
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .notice {
+        min-height: 24px;
+        color: #2458d3;
+        font-size: 0.9rem;
+      }
     `,
   ],
 })
