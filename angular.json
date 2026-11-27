@@ -50,6 +50,7 @@
             "index": "apps/shared/index.html",
             "browser": "apps/shell/src/main.ts",
             "polyfills": [
+              "es-module-shims",
               "zone.js"
             ],
             "tsConfig": "apps/shell/tsconfig.app.json",
@@ -149,6 +150,7 @@
             "index": "apps/shared/index.html",
             "browser": "apps/products/src/main.ts",
             "polyfills": [
+              "es-module-shims",
               "zone.js"
             ],
             "tsConfig": "apps/products/tsconfig.app.json",
@@ -248,6 +250,7 @@
             "index": "apps/shared/index.html",
             "browser": "apps/cart/src/main.ts",
             "polyfills": [
+              "es-module-shims",
               "zone.js"
             ],
             "tsConfig": "apps/cart/tsconfig.app.json",
@@ -347,6 +350,7 @@
             "index": "apps/shared/index.html",
             "browser": "apps/checkout/src/main.ts",
             "polyfills": [
+              "es-module-shims",
               "zone.js"
             ],
             "tsConfig": "apps/checkout/tsconfig.app.json",
@@ -446,6 +450,7 @@
             "index": "apps/shared/index.html",
             "browser": "apps/profile/src/main.ts",
             "polyfills": [
+              "es-module-shims",
               "zone.js"
             ],
             "tsConfig": "apps/profile/tsconfig.app.json",
