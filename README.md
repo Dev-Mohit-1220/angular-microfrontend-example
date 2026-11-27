@@ -1,11 +1,11 @@
 # ShopSphere — Angular Microfrontends
 
-Angular 22 + Native Federation workspace using strict TypeScript and standalone APIs. Implementation for [Epic #1](https://github.com/Dev-Mohit-1220/angular-microfrontend-example/issues/1).
+Angular 22 + Native Federation workspace using strict TypeScript and standalone APIs.
 
 | App | Port | Responsibility |
 |---|---:|---|
 | Shell / Host | 4200 | Navigation, runtime loading, fallback |
-| Products | 4201 | Mock catalogue and add-to-cart |
+| Products | 4201 | Small static catalogue and add-to-cart |
 | Cart | 4202 | In-memory cart and count events |
 | Checkout | 4203 | Demo confirmation only; no payments |
 | Profile | 4204 | Profile placeholder |
@@ -27,13 +27,14 @@ Run the remotes in separate terminals: `npm run start:products`, `npm run start:
 npm run format:check
 npm run lint
 npm run typecheck
+npm test
 npm run build:all
 ```
 
-Run `npm run format` to apply the repository Prettier rules. ESLint and Prettier checks run in GitHub Actions before type-checking and builds. TypeScript strict mode also rejects unused locals and parameters.
+CI applies Prettier formatting on push and validates formatting, lint, types, tests, and all five production builds.
 
-The Products remote intentionally uses a two-item catalogue: enough to demonstrate remote rendering and shared cart events without creating a large mock-data layer.
+## Scope
 
-Product data is mock data. Cart state resets on reload. Checkout does not collect payment details or process transactions. Profile contains no account data. Real authentication, persistence, payments, and production observability remain outside this initial implementation.
+The Products catalogue is static mock data. Cart state resets on reload. Checkout does not collect payment details or process transactions. Profile contains no account data. There is no backend, real authentication, persistence, or payment processing.
 
-See [architecture](docs/architecture.md), [deployment](docs/deployment.md), and [testing strategy](docs/testing.md). Angular and Native Federation are pinned to the compatible 22.2.5 release line.
+See [architecture](docs/architecture.md), [deployment](docs/deployment.md), and [testing](docs/testing.md).
