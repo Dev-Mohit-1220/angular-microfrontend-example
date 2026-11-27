@@ -71,6 +71,25 @@ import {
       </div>
     }
   `,
+  styles: [
+    `:host { display: block; }
+    .eyebrow { color: #2458d3; font-size: .75rem; font-weight: 700; letter-spacing: .14em; }
+    h1 { margin: 8px 0; font: 800 clamp(2rem, 5vw, 3rem) 'Manrope', sans-serif; letter-spacing: -.05em; }
+    .heading > p:last-child, .info p { color: #697789; line-height: 1.6; }
+    .empty, .summary { padding: 28px; border: 1px solid #e5eaf1; border-radius: 18px; background: white; }
+    .empty a, .checkout { display: inline-block; margin-top: 12px; padding: 11px 16px; border-radius: 10px; background: #2458d3; color: white; text-decoration: none; font-weight: 600; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 24px; align-items: start; }
+    .items { display: grid; gap: 14px; }
+    .item { display: flex; align-items: center; gap: 18px; padding: 16px; border: 1px solid #e5eaf1; border-radius: 16px; background: white; }
+    img { width: 88px; height: 88px; border-radius: 12px; object-fit: cover; }
+    .info { flex: 1; }
+    .info h2, .summary h2 { margin: 0 0 6px; font: 700 1rem 'Manrope', sans-serif; }
+    .info p { margin: 0 0 6px; }
+    .remove { color: #b42318; }
+    .line { display: flex; justify-content: space-between; margin: 18px 0; color: #697789; }
+    .total { padding-top: 16px; border-top: 1px solid #e5eaf1; color: #182230; }
+    @media (max-width: 760px) { .layout { grid-template-columns: 1fr; } .item { flex-wrap: wrap; } }`,
+  ],
 })
 export class CartComponent implements OnInit, OnDestroy {
   readonly items = signal<readonly CartItem[]>(readCartItems());
